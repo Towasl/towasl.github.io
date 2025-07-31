@@ -22,6 +22,12 @@
             display: flex;
             justify-content: center;
             direction: rtl;
+            align-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 21px;
+            flex-wrap: wrap;
+            align-content: center;
         }
 
         .container {
@@ -108,9 +114,13 @@
 
         @media (max-width: 768px) {
             body {
-                align-items: flex-start;
+                gap: 0;
+                flex-wrap: wrap;
+                align-content: center;
+                justify-content: flex-start;
             }
             .container {
+                max-width: 90%;
                 margin: 20px;
                 padding: 30px 20px;
             }
@@ -176,6 +186,13 @@
             <a href="terms-and-conditions/index.html" class="footer-link">الشروط والأحكام</a>
             <a href="privacy-policy/index.html" class="footer-link">سياسة الخصوصية</a>
         </div>
+    </div>
+    
+    <div style="    text-align: center;
+    color: #ebc0e3;
+    line-height: 22px;">
+        <p>جميع الحقوق محفوظة &copy; تواصل
+            <br>شركة أشكال لتنقية المعلومات</p>
     </div>
 </body>
 
