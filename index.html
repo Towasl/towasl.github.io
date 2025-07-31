@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تواصل - تطبيق الأنشطة الاجتماعية</title>
+    <meta name="description" content="تواصل - تطبيق يربط الأشخاص في المملكة العربية السعودية من خلال الأنشطة المحلية والفعاليات الاجتماعية">
+    <link rel="stylesheet" type="text/css" href="https://www.fontstatic.com/f=dubai" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "dubai";
+        }
+
+        body {
+            background: linear-gradient(135deg, #7A5BEE 0%, #FF009A 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            direction: rtl;
+        }
+
+        .container {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            width: 240px;
+            height: auto;
+            margin-bottom: 40px;
+        }
+
+        .tagline {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 39px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .app-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 43px;
+        }
+
+        .app-button {
+            width: 200px;
+            height: auto;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            cursor: pointer;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-button:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.05);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: #7A5BEE;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background-color: rgba(122, 91, 238, 0.1);
+        }
+
+        .footer-link:hover {
+            color: #FF009A;
+            background-color: rgba(255, 0, 154, 0.1);
+        }
+
+        .coming-soon {
+            background-color: #fff;
+            color: #666;
+            padding: 15px 25px;
+            border-radius: 11px;
+            font-size: 1.1em;
+            margin: auto auto 35px;
+            border: 1px solid #d9d9d9;
+            max-width: 419px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+
+            .logo {
+                width: 170px;
+                margin-bottom: 30px;
+            }
+
+            .tagline {
+                font-size: 1.3em;
+                margin-bottom: 25px;
+            }
+
+            .app-buttons {
+                gap: 15px;
+            }
+
+            .app-button {
+                width: 180px;
+            }
+
+            .footer-links {
+                gap: 20px;
+            }
+
+            .footer-link {
+                font-size: 0.9em;
+                padding: 6px 12px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .app-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="assets/logo.svg" alt="تواصل" class="logo">
+
+        <p class="tagline">تطبيق اجتماعي يربط الأشخاص ببعض من خلال الأنشطة المتنوعة</p>
+
+        <div class="coming-soon">
+            قريباً على متاجر التطبيقات
+        </div>
+
+        <div class="app-buttons">
+            <img src="assets/appstore.svg" alt="تحميل من App Store" class="app-button">
+            <img src="assets/googleplay.svg" alt="تحميل من Google Play" class="app-button">
+        </div>
+
+        <div class="footer-links">
+            <a href="privacy-policy/index.html" class="footer-link">سياسة الخصوصية</a>
+            <a href="terms-and-conditions/index.html" class="footer-link">الشروط والأحكام</a>
+        </div>
+    </div>
+</body>
+
+</html>
