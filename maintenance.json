@@ -1,0 +1,15 @@
+{
+    "maintenance_mode": true,
+    "maintenance_message": {
+        "title": "التطبيق قيد الصيانة",
+        "message": "نعتذر عن الإزعاج، التطبيق قيد الصيانة حالياً لتحسين الخدمة.\nيرجى المحاولة مرة أخرى لاحقاً.",
+        "fallback_message": "نعتذر عن الإزعاج، نواجه مشكلة تقنية مؤقتة.\nيرجى المحاولة مرة أخرى لاحقاً."
+    },
+    "last_updated": "2025-01-28T00:00:00Z",
+    "version": "1.0.0",
+    "emergency_contact": {
+        "enabled": false,
+        "message": "للدعم الفني، يرجى التواصل معنا",
+        "contact_info": ""
+    }
+}
