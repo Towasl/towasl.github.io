@@ -55,6 +55,62 @@
             100% { transform: rotate(360deg); }
         }
 
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 30px auto;
+            display: none;
+            animation: scaleIn 0.6s ease-out;
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-message {
+            display: none;
+            font-size: 1.2em;
+            color: #4CAF50;
+            margin: 20px 0;
+            font-weight: 600;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .loading-state {
+            display: block;
+        }
+
+        .loading-state.hidden {
+            display: none;
+        }
+
+        .success-state {
+            display: none;
+        }
+
+        .success-state.show {
+            display: block;
+        }
+
         .message {
             font-size: 1.1em;
             color: #333;
@@ -96,31 +152,55 @@
     <div class="container">
         <img src="../assets/logo.svg" alt="تواصل" class="logo">
 
-        <div class="loading-spinner"></div>
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+            <div class="loading-spinner"></div>
+            <p class="message">جاري التحويل...</p>
+            <p class="submessage">يتم توجيهك إلى متجر التطبيقات</p>
+        </div>
 
-        <p class="message">جاري التحويل...</p>
-        <p class="submessage">يتم توجيهك إلى متجر التطبيقات</p>
+        <!-- Success State -->
+        <div class="success-state" id="successState">
+            <svg class="success-icon" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+            <p class="success-message">تم تحويلك إلى متجر التطبيقات</p>
+        </div>
     </div>
 
     <script>
         // Device detection and redirect
         function detectDeviceAndRedirect() {
             const userAgent = navigator.userAgent.toLowerCase();
+            let redirectUrl = "";
 
             // Check for iPhone/iPad
             if (/iphone|ipad|ipod/.test(userAgent)) {
-                window.location.href = "https://apps.apple.com/sa/app/towasl-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id6748847903";
-                return;
+                redirectUrl = "https://apps.apple.com/sa/app/towasl-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id6748847903";
             }
-
             // Check for Android
-            if (/android/.test(userAgent)) {
-                window.location.href = "https://play.google.com/store/apps/details?id=com.towasl.app";
-                return;
+            else if (/android/.test(userAgent)) {
+                redirectUrl = "https://play.google.com/store/apps/details?id=com.towasl.app";
+            }
+            // Fallback for non-mobile devices
+            else {
+                redirectUrl = "https://towasl.com";
             }
 
-            // Fallback for non-mobile devices
-            window.location.href = "https://towasl.com";
+            // Show success state after 1.5 seconds
+            setTimeout(() => {
+                const loadingState = document.getElementById("loadingState");
+                const successState = document.getElementById("successState");
+
+                if (loadingState) loadingState.classList.add("hidden");
+                if (successState) successState.classList.add("show");
+
+                // Redirect after showing success message for 2 seconds
+                setTimeout(() => {
+                    window.location.href = redirectUrl;
+                }, 2000);
+            }, 1500);
         }
 
         // Run detection on page load
