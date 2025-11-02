@@ -202,19 +202,15 @@
                 redirectUrl = "https://towasl.com";
             }
 
-            // Show success state after 1.5 seconds
-            setTimeout(() => {
-                const loadingState = document.getElementById("loadingState");
-                const successState = document.getElementById("successState");
+            // Show success state immediately
+            const loadingState = document.getElementById("loadingState");
+            const successState = document.getElementById("successState");
 
-                if (loadingState) loadingState.classList.add("hidden");
-                if (successState) successState.classList.add("show");
+            if (loadingState) loadingState.classList.add("hidden");
+            if (successState) successState.classList.add("show");
 
-                // Redirect after showing success message for 2 seconds
-                setTimeout(() => {
-                    window.location.href = redirectUrl;
-                }, 2000);
-            }, 1500);
+            // Redirect immediately
+            window.location.href = redirectUrl;
         }
 
         // Run detection on page load
