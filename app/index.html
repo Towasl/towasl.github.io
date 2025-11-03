@@ -153,6 +153,37 @@
             font-weight: 300;
         }
 
+        .refresh-button {
+            background: linear-gradient(135deg, #7A5BEE 0%, #FF009A 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(122, 91, 238, 0.3);
+        }
+
+        .refresh-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(122, 91, 238, 0.4);
+        }
+
+        .refresh-button:active {
+            transform: translateY(0);
+        }
+
+        .success-state .refresh-button {
+            display: none;
+        }
+
+        .success-state.show .refresh-button {
+            display: inline-block;
+        }
+
         @media (max-width: 480px) {
             .container {
                 max-width: 90%;
@@ -194,6 +225,7 @@
                 <polyline points="22 4 12 14.01 9 11.01"></polyline>
             </svg>
             <p class="success-message">تم تحويلك إلى متجر التطبيقات</p>
+            <button class="refresh-button" onclick="location.reload()">تحديث الصفحة</button>
         </div>
     </div>
 
