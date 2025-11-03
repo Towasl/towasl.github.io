@@ -234,14 +234,15 @@
         function detectDeviceAndRedirect() {
             const userAgent = navigator.userAgent.toLowerCase();
             let redirectUrl = "";
+            const isAndroid = /android/.test(userAgent);
 
             // Check for iPhone/iPad
             if (/iphone|ipad|ipod/.test(userAgent)) {
                 redirectUrl = "https://apps.apple.com/sa/app/towasl-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id6748847903";
             }
             // Check for Android
-            else if (/android/.test(userAgent)) {
-                redirectUrl = "https://play.google.com/store/apps/details?id=com.towasl.app";
+            else if (isAndroid) {
+                redirectUrl = "intent://details?id=com.towasl.app#Intent;scheme=market;package=com.android.vending;end";
             }
             // Fallback for non-mobile devices
             else {

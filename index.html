@@ -231,7 +231,7 @@
 
             <div class="app-buttons">
                 <a href="https://apps.apple.com/sa/app/towasl-%D8%AA%D9%88%D8%A7%D8%B5%D9%84/id6748847903"><img src="assets/appstore.svg" alt="تحميل من App Store" class="app-button"></a>
-                <a href="https://play.google.com/store/apps/details?id=com.towasl.app"><img src="assets/googleplay.svg" alt="تحميل من Google Play" class="app-button"></a>
+                <a id="playStoreLink" href="https://play.google.com/store/apps/details?id=com.towasl.app"><img src="assets/googleplay.svg" alt="تحميل من Google Play" class="app-button"></a>
             </div>
         </div>
 
@@ -257,6 +257,22 @@
         <p>جميع الحقوق محفوظة &copy; تواصل
             <br>شركة أشكال لتقنية المعلومات</p>
     </div>
+
+    <script>
+        // Update Play Store link for Android devices
+        function updatePlayStoreLink() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const isAndroid = /android/.test(userAgent);
+            const playStoreLink = document.getElementById("playStoreLink");
+
+            if (isAndroid && playStoreLink) {
+                playStoreLink.href = "intent://details?id=com.towasl.app#Intent;scheme=market;package=com.android.vending;end";
+            }
+        }
+
+        // Run on page load
+        window.addEventListener("load", updatePlayStoreLink);
+    </script>
 </body>
 
 </html>
