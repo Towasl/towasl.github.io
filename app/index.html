@@ -14,13 +14,24 @@
             font-family: "dubai";
         }
 
+        html {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+
         body {
             background: linear-gradient(135deg, #7A5BEE 0%, #FF009A 100%);
-            min-height: 100vh;
+            height: 100%;
+            width: 100%;
             display: flex;
             justify-content: center;
             align-items: start;
             direction: rtl;
+            overflow: hidden;
+            position: fixed;
+            top: 0;
+            left: 0;
         }
 
         .container {
@@ -32,7 +43,8 @@
             backdrop-filter: blur(10px);
             max-width: 500px;
             width: 100%;
-            margin-top: 50px;
+            margin-top: 100px;
+            pointer-events: auto;
         }
 
         .logo {
